@@ -16,11 +16,11 @@
    then. However, redDTime does not display the time that has passed in the usual form of years, months, 
    days, hours, minutes and seconds, but in redD-taks and redD-tiks.
 
-### format of redDTime
+### redDTime format
 
 ![...](redDTime_img_1920-200.jpg)
 screenshot from Dec. 18, 2024
-# &nbsp;&nbsp;&nbsp;&nbsp;@redD-taks'redD-tiks@ --> @YY.MM.DD'TT.TTT@
+># &nbsp;&nbsp;&nbsp;&nbsp;@redD-taks'redD-tiks@ --> @YY.MM.DD'TT.TTT@
 
    | &nbsp; | value |
    | ---: | :----------- |
@@ -31,6 +31,25 @@ screenshot from Dec. 18, 2024
  
    Reference time: 12.11.1990 0.00 Uhr ("WorldWideWeb: Proposal for a HyperText Project")
 
+### implementations in upcoming releases
+
+- __redefine time zones__
+
+    So far, the definition of time zones in 24 segments remains unaffected. This leads to jumps of the redD-tiks by 4166.666667 when the time zone changes. 
+    It would make more sense to redefine and set the number of time zones to 20. This would result in redD-tik jumps of 5000 when the time zone changes. 
+    At the same time, however, the assignment of the associated time zone would have to be checked and, if necessary, corrected for all countries worldwide.
+
+- __availability of redDTime in complex notation__ 
+
+    To use the redDTime on quantum hardware, the following notation is suggested: 
+
+    __redDTimeComp06 = (Sum(redD-tak-Days)/10^6)+(redDtiks/100000)j__
+
+    example:
+  
+># &nbsp;&nbsp;&nbsp;&nbsp;@34.01.08'68.742@ --> 0.012455+0.68742j  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;With this value the spin-encoding can be assigned directly onto a qubit.
 ### copyright notice 
 
    see LICENSE
